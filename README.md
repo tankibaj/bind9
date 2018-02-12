@@ -178,6 +178,12 @@ $TTL    86400
 ; PTR Records
 7.0     IN      PTR     ns1.example.com. ; 192.168.1.7
 ```
+#### Run the following commands to set ownership
+
+`chown -R bind:root /etc/bind/`
+
+`chmod -R 755 /etc/bind/`
+
 #### Restart bind9
 Restart the bind9 service
 
