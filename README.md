@@ -3,6 +3,9 @@ This bind9 server is going to act as an internal DNS server for me. It’s also 
 ## Step 1: Install Bind9
 `apt install bind9 -y`
 
+#### Check Version 
+`named -v`
+
 ## Step 2: Network Settings
 #### Change to static IP addres if you use Debian as a Network Server.
 `nano /etc/network/interfaces`
@@ -94,7 +97,10 @@ Step3 is optional. If apparmor is not running on your system then no need to do 
  
  #### Add following lines
  ```
- forward only;
+ recursion yes; // enabling the dns caching
+ max-cache-size 30g; // cache size 25g for dns
+ cleaning-interval 1440; // clean the cache every 1440 min
+ //forward only;
  forwarders {
     8.8.8.8;
     8.8.4.4;
