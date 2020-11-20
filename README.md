@@ -1,7 +1,7 @@
 This bind9 server is going to act as an internal DNS server for me. It’s also going to forward queries that it is not authoritative for to Google’s DNS servers 8.8.8.8 and 8.8.4.4.
 
 ## Step 1: Install Bind9
-`apt install bind9 -y`
+`sudo apt-get install bind9 bind9utils bind9-doc`
 
 #### Check Version 
 `named -v`
